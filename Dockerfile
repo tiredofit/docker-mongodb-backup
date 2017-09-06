@@ -1,0 +1,20 @@
+FROM tiredofit/alpine:edge
+MAINTAINER Dave Conroy <dave at tiredofit dot ca>
+
+### Set Environment Variables
+   ENV ENABLE_SMTP=FALSE
+
+### Dependencies
+   RUN apk update && \
+       apk add \
+       	   mongodb \
+    	   bzip2 \
+    	   xz && \
+       rm -rf /var/cache/apk/* 
+
+### S6 Setup
+   ADD install/s6 /etc/s6
+
+### Entrypoint Configuration  
+   ENTRYPOINT ["/init"]
+
