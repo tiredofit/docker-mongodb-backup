@@ -91,7 +91,6 @@ Along with the Environment Variables from the [Base image](https://hub.docker.co
 |  `DB_CLEANUP_TIME` | Value in minutes to delete old backups (only fired when dump freqency fires). 1440 would delete anything above 1 day old. You don't need to set this variable if you want to hold onto everything.
 |  `COMPRESSION` | Use either Gzip (GZ), Bzip2 (BZ), XZip (XZ), or none (NONE). (Default GZ)
 |  `MD5` | Generate MD5 Sum in Directory, TRUE or FALSE (Default TRUE)
-|  `SPLIT_DB` | If using root as username and multiple DBs on system, set to TRUE to create Seperate DB Backups instead of all in one. (Default FALSE)
 
 
 ## Maintenance
