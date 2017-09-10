@@ -7,7 +7,7 @@ LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 ### Dependencies
    RUN apk update && \
        apk add \
-       	   mongodb \
+       	   mongodb-tools \
     	   bzip2 \
     	   xz && \
        rm -rf /var/cache/apk/* 

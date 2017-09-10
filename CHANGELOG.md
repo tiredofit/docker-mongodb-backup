@@ -1,3 +1,7 @@
+## 1.2 2017-09-09 <dave at tiredofit dot ca>
+
+* Fix issue with Mongodump
+
 ## 1.1 2017-09-09 <dave at tiredofit dot ca>
 
 * Fixed Environment Variable DBHOST
