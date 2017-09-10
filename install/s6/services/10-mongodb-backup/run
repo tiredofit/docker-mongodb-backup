@@ -32,7 +32,6 @@ DBHOST=${DB_HOST}
 
 # temporary dump dir
 TMPDIR=/tmp/backups
-TMPRESTORE=/tmp/restorefile
 
 # compression
 COMPRESSION=${COMPRESSION:-GZ}
@@ -136,11 +135,14 @@ function uri_parser() {
 
     # what is the name of our target?
     now=$(date +"%Y%m%d-%H%M%S")
-    TARGET=db_${DBNAME}_${DBHOST}_${now}.mongo.sql
+    TARGET=mongo_${DBNAME}_${DBHOST}_${now}
 
     # make the dump
     mongodump --out ${TMPDIR}/${TARGET} --host ${DBHOST} --port ${DBPORT} ${USER_STR}${PASS_STR}${DB_STR} ${EXTRA_OPTS}
-         
+    cd ${TMPDIR}
+    tar cf ${TARGET}.tar ${TARGET}/*
+    TARGET=${TARGET}.tar     
+
     # take md5 sum
   if [ "$MD5" = "TRUE" ];  then  
     cd $TMPDIR
@@ -179,7 +181,6 @@ function uri_parser() {
       ;;
     esac
 
-    # what kind of target do we have? Plain filesystem? smb?
     case "${uri[schema]}" in
       "file")
         mkdir -p ${uri[path]}
@@ -190,7 +191,7 @@ function uri_parser() {
 
     # Perform Automatic Cleanup 
         if [[ -n "$DB_CLEANUP_TIME" ]]; then
-        find /backup/  -mmin +$DB_CLEANUP_TIME -iname "db_$DBNAME_*.*" -exec rm {} \;
+        find /backups/  -mmin +$DB_CLEANUP_TIME -iname "db_$DBNAME_*.*" -exec rm {} \;
         fi
 
      # wait

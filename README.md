@@ -2,7 +2,7 @@
 
 # Introduction
 
-This will build a container for backing up MySQL containers. 
+This will build a container for backing up MongoDB containers. 
 
 * dump to local filesystem 
 * select database user and password

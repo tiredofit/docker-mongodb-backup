@@ -1,6 +1,11 @@
+## 1.3 2017-09-10 <dave at tiredofit dot ca>
+
+* Rename Backups to be clear
+* Directory Backup Fix
+
 ## 1.2 2017-09-09 <dave at tiredofit dot ca>
 
-* Fix issue with Mongodump
+* Fix mongodump
 
 ## 1.1 2017-09-09 <dave at tiredofit dot ca>
 
