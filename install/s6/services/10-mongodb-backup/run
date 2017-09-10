@@ -136,10 +136,10 @@ function uri_parser() {
 
     # what is the name of our target?
     now=$(date +"%Y%m%d-%H%M%S")
-    TARGET=db_${DBNAME}_${DBSERVER}_${now}.mongo.sql
+    TARGET=db_${DBNAME}_${DBHOST}_${now}.mongo.sql
 
     # make the dump
-    mongodump --out ${TMPDIR}/${TARGET} --host ${DBSERVER} --port ${DBPORT} ${USER_STR}${PASS_STR}${DB_STR} ${EXTRA_OPTS}
+    mongodump --out ${TMPDIR}/${TARGET} --host ${DBHOST} --port ${DBPORT} ${USER_STR}${PASS_STR}${DB_STR} ${EXTRA_OPTS}
          
     # take md5 sum
   if [ "$MD5" = "TRUE" ];  then  
