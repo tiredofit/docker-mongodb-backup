@@ -191,7 +191,7 @@ function uri_parser() {
 
     # Perform Automatic Cleanup 
         if [[ -n "$DB_CLEANUP_TIME" ]]; then
-        find /backups/  -mmin +$DB_CLEANUP_TIME -iname "db_$DBNAME_*.*" -exec rm {} \;
+        find /backups/  -mmin +$DB_CLEANUP_TIME -iname "mongo_$DBNAME_*.*" -exec rm {} \;
         fi
 
      # wait
