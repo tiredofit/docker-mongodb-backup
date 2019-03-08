@@ -28,7 +28,7 @@ DBPORT=${DB_PORT:-27017}
 DBHOST=${DB_HOST}
 
 # database name
-[[ ( -n "${DB_NAME}" ) ]] && USER_STR=" --db ${DB_NAME}"
+[[ ( -n "${DB_NAME}" ) ]] && DB_STR=" --db ${DB_NAME}"
 
 # temporary dump dir
 TMPDIR=/tmp/backups
