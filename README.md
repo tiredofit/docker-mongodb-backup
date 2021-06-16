@@ -81,6 +81,7 @@ Along with the Environment Variables from the [Base image](https://hub.docker.co
 |  `DB_NAME` | (optional) database name
 |  `DB_USER` | (optional) username for the database
 |  `DB_PASS` | (optional) password for the database
+|  `DB_AUTH` | (optional) authentication database - usually "admin"
 |  `DB_DUMP_FREQ` | How often to do a dump, in minutes. Defaults to 1440 minutes, or once per day.
 |  `DB_DUMP_BEGIN` | What time to do the first dump. Defaults to immediate. Must be in one of two formats
 | | Absolute HHMM, e.g. `2330` or `0415`
@@ -101,4 +102,3 @@ For debugging and maintenance purposes you may want access the containers shell.
 ```bash
 docker exec -it (whatever your container name is e.g.) mongodb-backup bash
 ```
-

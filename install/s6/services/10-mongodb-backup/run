@@ -20,6 +20,7 @@ DB_DUMP_TARGET=${DB_DUMP_TARGET:-/backups}
 # login credentials
 [[ ( -n "${DB_USER}" ) ]] && USER_STR=" --username ${DB_USER}"
 [[ ( -n "${DB_PASS}" ) ]] && PASS_STR=" --password ${DB_PASS}"
+[[ ( -n "${DB_AUTH}" ) ]] && AUTH_STR=" --authenticationDatabase ${DB_AUTH}"
 
 # Port
 DBPORT=${DB_PORT:-27017}
