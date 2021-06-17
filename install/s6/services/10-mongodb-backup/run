@@ -139,7 +139,7 @@ function uri_parser() {
     TARGET=mongo_${DBNAME}_${DBHOST}_${now}
 
     # make the dump
-    mongodump --out ${TMPDIR}/${TARGET} --host ${DBHOST} --port ${DBPORT} ${USER_STR}${PASS_STR}${DB_STR} ${EXTRA_OPTS}
+    mongodump --out ${TMPDIR}/${TARGET} --host ${DBHOST} --port ${DBPORT} ${USER_STR}${PASS_STR}${AUTH_STR}${DB_STR} ${EXTRA_OPTS}
     cd ${TMPDIR}
     tar cf ${TARGET}.tar ${TARGET}/* && rm -R ${TARGET}
     TARGET=${TARGET}.tar     
